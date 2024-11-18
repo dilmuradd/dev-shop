@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.draggable-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.draggable-image {
+  cursor: move; /* move cursor */
+  background-blend-mode: screen !important;
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 0px;
+  cursor: se-resize; /* resize cursor */
+}
+
+@layer utilities {
+  .flex_center{
+    @apply flex justify-center items-center
+  }
+  .flex_between {
+    @apply flex justify-between items-center
+  }
+  .flex_row {
+    @apply flex flex-row
+  }
+  .flex_col {
+    @apply flex flex-col
+  }
+
+  /* typography */
+  .label{
+    @apply text-sm font-medium tracking-tight md:text-xl lg:text-2xl
+  }
+
+  /* create Order page */
+  .size_button{
+    @apply h-7 md:h-10 flex_center px-2 hover:bg-zinc-300 border-[1px] border-zinc-300 active:bg-zinc-300 md:text-sm lg:text-lg
+  }
+  .text{
+    @apply text-sm sm:text-sm md:text-[1rem] lg:text-lg
+  }
+}
+
