@@ -4,7 +4,9 @@ import ImageCanvas from '../components/imageCanvas.jsx';
 
 export default function CreateOrder(){
   const [imageSrc, setImageSrc] = useState('');
-
+  let deleteImg = (data) =>{
+    setImageSrc(data)
+  }
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -23,8 +25,8 @@ export default function CreateOrder(){
       </div>
       <div className='bg-zinc-800 flex-1 p-5'>
         <div className=' relative'>
-          <img src={image} alt="" /> 
-          {imageSrc && <ImageCanvas imageSrc={imageSrc} className="bg-red-300 absolute top-24 left-1/2 -translate-x-[50%] overflow-hidden w-[250px] h-[300px]" />}
+          <img src={image} alt="" className='h-[97vh]' /> 
+          {imageSrc && <ImageCanvas  onSendData={deleteImg} imageSrc={imageSrc} className="bg-red-300 absolute top-24 left-1/2 -translate-x-[50%] overflow-hidden w-[250px] h-[300px]" />}
         </div>
       </div>
     </div>
